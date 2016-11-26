@@ -1,0 +1,42 @@
+
+<div class="row">
+    <div class="section-header">
+        <h1 style="color: #19717a">Danh sách chuyến bay</h1>
+    </div>
+</div>
+    
+        
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><label>Mã Chuyến Bay</label></th>  
+        <th><label>Khởi Hành</label></th>
+        <th><label>Đến</label></th>
+        <th><label>Thời gian</label></th>
+        <th><label>Ngày</label></th>
+        <th><label>Tên hạng</label></th>
+        <th><label>Giá vé</label></th>
+        <th><label>Đặt vé</label></th>
+      </tr>
+    </thead>
+         <tbody>
+      <tr ng-repeat='item in Flight'>
+        <td ng-bind='item.MaCB'></td>
+        <td ng-bind='item.Noidi'></td>
+        <td ng-bind='item.Noiden'></td>
+        <td ng-bind='item.Gio'></td>
+        <td ng-bind='item.Ngay'></td>
+        <td ng-bind='item.Tenhang'></td>
+        <td ng-bind='item.Giaban'></td>
+        <td><label class="checkbox-inline"><input type="radio" name="CheckFlight" ng-model='Dangky' ng-bind="item.Check"></label></td>
+      </tr>
+        </tbody>
+        </table>
+               <ul class="pager">
+    <li class="previous"><a href="/">Quay lại</a></li>
+    <li class="next"><a href="/person" ng-click='PERSON()'>Tiếp tục</a></li>
+  </ul>
+
+
+                 
+<script src="/js/controlFlightlist.js"></script>

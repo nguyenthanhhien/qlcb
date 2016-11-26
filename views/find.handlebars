@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="section-header">
+        <h1 style="color: #19717a">Tìm Chuyến Bay</h1>
+    </div>
+</div>
+    
+    <div class="row">
+        <ul class="nav bookyourtrip-tab naviga-blue">
+
+            <li class="mb-col-3" ng-class='active_Khuhoi'>
+                <a id="roundtrip" ng-click='KHUHOI()'>
+                    Khứ hồi </a>
+            </li>
+
+
+            <li class="mb-col-3 active" ng-class='active_Motchieu'>
+                <a id="oneway" ng-click='MOTCHIEU()'>
+                    Một chiều</a>
+            </li>
+        </ul>
+        <div class="input-daterange input-group">
+        <div class="col-sm-6">
+            <div class="form-item">
+                <label id="label">Nơi khởi hành</label>
+                <select class="form-control" ng-options="item.Noidi group by item.Khuvucdi for item in list" ng-model="selected_NoiDi" ng-change="hasChanged()">
+                 <!--<option ng-repeat="item in list" ng-bind="item.Noidi"></option> -->
+                </select>
+            </div>
+        </div>
+            <div class="col-sm-6">
+                <div class="form-item">
+                    <label>Nơi đến</label>
+                    <select class="form-control" ng-options="item.Noiden group by item.Khuvucden for item in listDS" ng-model="selected_NoiDen">
+                    </select>
+                </div>
+            </div>
+        </div><br><br>
+    </div>
+
+    <div class="row">
+        <div id="flight-datepicker" class="input-daterange input-group">
+            <div class="col-sm-6">
+                <div class="form-item">
+                    <label>Ngày khởi hành</label>
+                    <md-datepicker ng-model="StartDate" md-placeholder="Enter date" md-min-date="minDate"></md-datepicker>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-item">
+                    <label>Ngày trở về</label>
+                    <md-datepicker ng-model="EndDate" md-placeholder="Enter date" md-min-date="minEndDate"></md-datepicker>
+                </div>
+            </div>
+        </div><br><br>
+    </div>
+    <div class="row" id="number">
+        <div class="col-md-2 col-md-offset-5">
+            <label>Số lượng vé</label>
+            <input type="number"  placeholder="1" min="1" step="1" max="10" class="form-control">
+        </div>
+    </div><br><br>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+             <label>Loại vé</label>
+            <label class="radio-inline"><input type="radio" name="optradio" ng-model='Loaive' value="Y">Vé thương gia</label>
+            <label class="radio-inline"><input type="radio" name="optradio" ng-model='Loaive' value="C">Vé phổ thông</label>
+        </div>
+        <div class="col-sm-4"></div>
+
+    </div><br><br>
+    <div class="row-btn" id='btFind' disabled>
+        <a  class="btn green" ng-click="FIND()">Tìm vé</a> 
+    </div>
+    <label ng-bind="Error_Find"></label>
+
+
+<script src="/js/controlFind.js"></script>
